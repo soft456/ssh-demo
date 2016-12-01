@@ -71,7 +71,12 @@ public class AccountBusinessImpl implements AccountBusiness {
 
 	@Override
 	public void delete(Account a) {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub		
+		
+		AccountInfo ai = new AccountInfo();
+		ai.setUserId(a.getUserId());
+		accountInfoDao.delete(ai);
+		
 		accountDao.delete(a);
 	}
 
