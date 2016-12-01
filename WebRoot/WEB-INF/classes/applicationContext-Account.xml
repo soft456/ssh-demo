@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+
+	<bean id="account" name="/account" class="com.sneb.struts.action.AccountAction"
+		abstract="false" lazy-init="default" autowire="default"
+		p:accountBusiness-ref="accountBusiness">
+	</bean>
+
+
+	<bean id="accountDao" class="com.sneb.dao.impl.AccountDaoImpl"
+		abstract="false" lazy-init="default" autowire="default"
+		p:sessionFactory-ref="sessionFactory">
+	</bean>
+
+	<bean id="accountInfoDao" class="com.sneb.dao.impl.AccountInfoDaoImpl"
+		abstract="false" lazy-init="default" autowire="default"
+		p:sessionFactory-ref="sessionFactory">
+	</bean>
+
+	<bean id="accountBusiness" parent="baseTxService">
+		<property name="target">
+			<bean class="com.sneb.business.impl.AccountBusinessImpl"
+				abstract="false" lazy-init="default" autowire="default"
+				p:accountDao-ref="accountDao" p:accountInfoDao-ref="accountInfoDao">
+			</bean>
+		</property>
+	</bean>
+
+</beans>

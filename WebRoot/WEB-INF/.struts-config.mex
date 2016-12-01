@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/account.do" location="50,50" dimension="256,104" />
+  <StrutsActivity path="/Account/update.jsp" location="350,250" dimension="149,53" />
+  <StrutsActivity path="/Account/detail.jsp" location="650,250" dimension="140,53" />
+  <StrutsActivity path="/Account/list.jsp" location="950,50" dimension="124,53" />
+  <StrutsActivity path="/Account/add.jsp" location="50,250" dimension="131,53" />
+  <StrutsActivity path="/index.jsp" location="650,50" dimension="88,53" />
+  <StrutsActivity path="/Account/edit.jsp" />
+  <StrutsTransition id="/account.do,add,/Account/add.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="115,154" />
+      <AbsolutePoint location="115,250" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/account.do,update,/Account/update.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="178,102" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/account.do,show,/Account/list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="178,102" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/account.do,detail,/Account/detail.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="178,102" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/account.do,update,/Account/edit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="178,102" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+
